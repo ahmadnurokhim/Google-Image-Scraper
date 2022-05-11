@@ -7,6 +7,7 @@ Created on Sun Jul 12 11:02:06 2020
 """
 #Import libraries
 import os
+import sys
 from GoogleImageScrapper import GoogleImageScraper
 from patch import webdriver_executable
 
@@ -16,11 +17,14 @@ if __name__ == "__main__":
     image_path = os.path.normpath(os.path.join(os.getcwd(), 'photos'))
 
     #Add new search key into array ["cat","t-shirt","apple","orange","pear","fish"]
-    search_keys= ['apple','t-shirt']
+    search_keys= []
+    for keyid in range(len(sys.argv)):
+        if keyid > 1:
+            search_keys.append(sys.argv[keyid])
 
     #Parameters
-    number_of_images = 2
-    headless = False
+    number_of_images = int(sys.argv[1])
+    headless = True
     min_resolution=(0,0)
     max_resolution=(9999,9999)
 
