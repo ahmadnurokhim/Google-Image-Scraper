@@ -17,7 +17,11 @@ A library to scrap google images
     ```
     pip install selenium requests pillow
     ```
-4. Run the code
+4. cd to the folder
+    ```
+    cd Google-Image-Scraper 
+    ```
+5. Run the code
     ```
     python main.py 10 "apple" "t-shirt" 
     ```
